@@ -671,13 +671,9 @@ body {
 	display: none;
 }
 
-/* MOBILE */
-
-/* 1024,768,480,320  */
-
-/* @media only screen and (max-width: 1920px) {
-
- } */
+.swiper {
+	display: none;
+}
 
 @media only screen and (max-width: 1024px) {
 	.container {

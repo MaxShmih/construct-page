@@ -13,17 +13,6 @@ const swiper = new Swiper('.swiper', {
 	},
 });
 
-burger.addEventListener('click', function () {
-	body.classList.toggle('active')
-	burger.classList.toggle('active');
-	burgerMenu.classList.toggle('active');
-	burgerMenu.addEventListener('click', function () {
-		burgerMenu.classList.remove('active');
-		burger.classList.remove('active');
-		body.classList.remove('active');
-	})
-})
-
 scrollBlock.addEventListener('click', function () {
 	header.scrollIntoView({
 		behavior: 'smooth'
@@ -37,6 +26,20 @@ const scrollSpan = document.querySelectorAll('.letter').forEach(el => {
 			el.classList.remove('jump')
 		}, 1000)
 	})
-
-
 })
+
+function toggleBurgerMenu() {
+	body.classList.toggle('active');
+	burger.classList.toggle('active');
+	burgerMenu.classList.toggle('active');
+}
+
+function closeBurgerMenu() {
+	burgerMenu.classList.remove('active');
+	burger.classList.remove('active');
+	body.classList.remove('active');
+}
+
+burger.addEventListener('click', toggleBurgerMenu);
+burgerMenu.addEventListener('click', closeBurgerMenu);
+
